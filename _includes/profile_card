@@ -1,0 +1,38 @@
+<div class="profile-card">
+  {% if site.logo %}
+  <div class="profile-image-wrap">
+    <img
+      class="profile-image"
+      src="{{ site.logo | relative_url }}"
+      alt="{{ site.logo_alt | default: site.title }}"
+      onerror="this.parentElement.classList.add('is-hidden');"
+    />
+  </div>
+  {% endif %}
+
+  <p class="profile-name">
+    <a class="no-arrow" href="{{ '/' | relative_url }}">{{ site.title | default: site.github.repository_name }}</a>
+  </p>
+  <p class="profile-description">{{ site.tagline | default: site.github.project_tagline | strip }}</p>
+
+  <ul class="sidebar-links">
+    {% if site.email %}
+    <li><a class="no-arrow" href="mailto:{{ site.email }}"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>{{ site.email }}</span></a></li>
+    {% endif %}
+    {% if site.linkedin_url %}
+    <li><a class="no-arrow" href="{{ site.linkedin_url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin-square" aria-hidden="true"></i><span>LinkedIn</span></a></li>
+    {% endif %}
+    {% if site.scholar_url %}
+    <li><a class="no-arrow" href="{{ site.scholar_url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span>Google Scholar</span></a></li>
+    {% endif %}
+    {% if site.orcid_url %}
+    <li><a class="no-arrow" href="{{ site.orcid_url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-id-card-o" aria-hidden="true"></i><span>ORCID</span></a></li>
+    {% endif %}
+    {% if site.cv_url %}
+    <li><a class="no-arrow" href="{{ site.cv_url | relative_url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" aria-hidden="true"></i><span>Download CV</span></a></li>
+    {% endif %}
+    {% if site.github.owner_url %}
+    <li><a class="no-arrow" href="{{ site.github.owner_url }}"><i class="fa fa-github" aria-hidden="true"></i><span>GitHub</span></a></li>
+    {% endif %}
+  </ul>
+</div>
