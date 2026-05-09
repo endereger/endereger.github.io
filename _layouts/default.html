@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- MathJax for equations -->
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if site.description %}
+    <meta name="description" content="{{ site.description | strip_html | strip_newlines }}">
+    {% endif %}
+
+    {% if site.image %}
+    <meta property="og:image" content="{{ site.image | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ site.image | absolute_url }}">
+    {% endif %}
+
+    <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+
+    {% seo title=false %}
+
+    {% assign site_name = site.title | default: site.github.repository_name %}
+    {% assign default_browser_title = site.browser_title | default: site_name %}
+
+    {% if page.browser_title %}
+    <title>{{ page.browser_title | escape }}</title>
+    {% elsif page.title and page.url != "/" and page.url != "/index.html" %}
+    <title>{{ site_name | append: " | " | append: page.title | escape }}</title>
+    {% else %}
+    <title>{{ default_browser_title | escape }}</title>
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/custom.css?v=' | append: site.github.build_revision | relative_url }}">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  {% assign is_homepage = false %}
+  {% if page.url == "/" or page.url == "/index.html" %}
+    {% assign is_homepage = true %}
+  {% endif %}
+
+  {% if is_homepage %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Zekeriya Ender Eger",
+    "url": "https://endereger.github.io",
+    "email": "endereger@vt.edu",
+    "jobTitle": "Ph.D. Candidate in Mechanical Engineering",
+    "affiliation": [
+      {
+        "@type": "Organization",
+        "name": "Virginia Tech"
+      }
+    ],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=W71BizwAAAAJ&hl=en&oi=ao",
+      "https://github.com/endereger"
+    ],
+    "knowsAbout": [
+      "Computational materials science",
+      "Physics-informed machine learning",
+      "Scientific machine learning",
+      "Microstructure-sensitive modeling",
+      "Finite element simulation",
+      "Acoustic holography",
+      "Optimization",
+      "High-performance computing"
+    ]
+  }
+  </script>
+  {% endif %}
+
+  <body class="{% if is_homepage %}page-home{% else %}page-subpage{% endif %}">
+    <a class="skip-link no-arrow" href="#main-content">Skip to content</a>
+
+    <header class="site-topbar">
+      <div class="topbar-inner">
+        <a class="brand no-arrow" href="{{ '/' | relative_url }}">
+          {{ site.title | default: site.github.repository_name }}
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a class="nav-link no-arrow" href="{{ '/' | relative_url }}">Home</a>
+          <a class="nav-link no-arrow" href="{{ '/' | relative_url }}#research">Research</a>
+          <a class="nav-link no-arrow" href="{{ '/' | relative_url }}#experience">Experience</a>
+          <a class="nav-link no-arrow" href="{{ '/' | relative_url }}#education">Education</a>
+          <a class="nav-link no-arrow" href="{{ '/' | relative_url }}#publications">Publications</a>
+          <a class="nav-link no-arrow" href="{{ '/' | relative_url }}#projects">Projects</a>
+          <a class="nav-link no-arrow" href="{{ '/' | relative_url }}#skills">Skills</a>
+          <a class="nav-link no-arrow" href="{{ '/' | relative_url }}#contact">Contact</a>
+
+          {% if site.cv_url %}
+          <a class="nav-link no-arrow" href="{{ site.cv_url | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
+          {% endif %}
+        </nav>
+      </div>
+    </header>
+
+    <div class="site-shell">
+      <main id="main-content" class="site-content">
+        {% if is_homepage %}
+        <div class="mobile-home-profile">
+          {% include profile-card.html %}
+        </div>
+        {% endif %}
+
+        {% unless is_homepage %}
+        <p><a class="back-link no-arrow" href="{{ '/' | relative_url }}">&larr; Back to Home</a></p>
+        {% endunless %}
+
+        {{ content }}
+      </main>
+
+      <aside class="site-sidebar">
+        {% include profile-card.html %}
+
+        {% if is_homepage %}
+        <div class="sidebar-box">
+          <h2>Research Keywords</h2>
+          <ul class="keyword-list">
+            <li>Physics-informed machine learning</li>
+            <li>Computational materials science</li>
+            <li>Microstructure-sensitive modeling</li>
+            <li>Finite element simulation</li>
+            <li>Surrogate modeling</li>
+            <li>Scientific machine learning</li>
+            <li>Optimization</li>
+            <li>Acoustic holography</li>
+            <li>Magnetic materials</li>
+            <li>High-performance computing</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-box">
+          <h2>Skills</h2>
+          <p class="sidebar-note">
+            A summary of tools and methods I use in research and engineering projects.
+          </p>
+
+          <dl class="skills-list">
+            <div>
+              <dt>Programming</dt>
+              <dd>Python, MATLAB, Bash, SQL, pandas, NumPy</dd>
+            </div>
+
+            <div>
+              <dt>Simulation</dt>
+              <dd>Abaqus, finite element modeling, molecular dynamics, acoustic simulation workflows</dd>
+            </div>
+
+            <div>
+              <dt>Machine Learning</dt>
+              <dd>Physics-informed neural networks, convolutional neural networks, surrogate modeling</dd>
+            </div>
+
+            <div>
+              <dt>Optimization</dt>
+              <dd>Genetic algorithms, simulated annealing, quantum-inspired evolutionary optimization, sensitivity-guided search</dd>
+            </div>
+
+            <div>
+              <dt>HPC</dt>
+              <dd>Linux, Slurm, parallel MATLAB workflows, large-scale simulation management</dd>
+            </div>
+
+            <div>
+              <dt>Engineering Testing</dt>
+              <dd>Automotive testing, calibration, data post-processing, requirements-based validation</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="sidebar-box">
+          <h2>Links</h2>
+          <ul class="membership-list">
+            <li><a href="mailto:endereger@vt.edu">Email</a></li>
+            <li><a href="https://scholar.google.com/citations?user=W71BizwAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+            <li><a href="https://github.com/endereger" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            {% if site.linkedin_url %}
+            <li><a href="{{ site.linkedin_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        {% endif %}
+
+        <footer class="site-footer">
+          <p><small>Last updated: {{ site.time | date: "%B %-d, %Y" }}</small></p>
+        </footer>
+      </aside>
+    </div>
+
+    <script>
+      (function() {
+        var button = document.querySelector(".menu-toggle");
+        var nav = document.querySelector("#site-nav");
+
+        if (!button || !nav) {
+          return;
+        }
+
+        button.addEventListener("click", function() {
+          var isOpen = document.body.classList.toggle("nav-open");
+          button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        nav.querySelectorAll("a").forEach(function(link) {
+          link.addEventListener("click", function() {
+            document.body.classList.remove("nav-open");
+            button.setAttribute("aria-expanded", "false");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
