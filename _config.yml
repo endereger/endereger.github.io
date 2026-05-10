@@ -6,7 +6,7 @@ image: "/images/picture.jpg"
 description: "Ph.D. candidate at UTK and ORNL intern specializing in computational mechanics, graph neural networks for microstructure-property prediction, and HPC materials simulations."
 tagline: "Graduate Intern, ORNL <br> Ph.D. Candidate, UTK"
 
-url: "https://erdemcaliskan.github.io"
+url: "https://endereger.github.io"
 author: "Erdem Caliskan"
 
 remote_theme: pages-themes/minimal@v0.2.0
