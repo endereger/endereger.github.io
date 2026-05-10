@@ -1,0 +1,28 @@
+title: Erdem Caliskan # your name (or website title) here
+browser_title: "Erdem Caliskan | Computational Mechanics | ML for Materials"
+logo: "/images/picture.jpg?raw=true" # your photo (or logo) here
+logo_alt: "Portrait of Erdem Caliskan"
+image: "/images/picture.jpg"
+description: "Ph.D. candidate at UTK and ORNL intern specializing in computational mechanics, graph neural networks for microstructure-property prediction, and HPC materials simulations."
+tagline: "Graduate Intern, ORNL <br> Ph.D. Candidate, UTK"
+
+url: "https://erdemcaliskan.github.io"
+author: "Erdem Caliskan"
+
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
+- jekyll-seo-tag
+- jekyll-sitemap
+google_analytics: G-FDYFBHBXFJ # your Google Analytics tracking ID here
+
+# Optional profile links 
+email: "erdem@tennessee.edu"
+linkedin_url: "https://www.linkedin.com/in/caliskan-erdem/"
+scholar_url: "https://scholar.google.com/citations?user=zyi4jX8AAAAJ&hl=en&oi=sra" # e.g., https://scholar.google.com/citations?user=XXXX
+orcid_url: "https://orcid.org/0000-0003-4488-0364"   # e.g., https://orcid.org/0000-0000-0000-0000
+cv_url: "/pdf/Erdem_Caliskan_CV.pdf"
+
+exclude:
+  - cv.tex
+  - vendor
