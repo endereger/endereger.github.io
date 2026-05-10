@@ -1,28 +1,32 @@
-title: Erdem Caliskan # your name (or website title) here
-browser_title: "Erdem Caliskan | Computational Mechanics | ML for Materials"
-logo: "/images/picture.jpg?raw=true" # your photo (or logo) here
-logo_alt: "Portrait of Erdem Caliskan"
-image: "/images/picture.jpg"
-description: "Ph.D. candidate at UTK and ORNL intern specializing in computational mechanics, graph neural networks for microstructure-property prediction, and HPC materials simulations."
-tagline: "Graduate Intern, ORNL <br> Ph.D. Candidate, UTK"
+title: "Zekeriya Ender Eger"
+browser_title: "Zekeriya Ender Eger | Computational Materials Science | Physics-Informed Machine Learning"
+
+# Use this only after you upload your photo as images/profile.jpg
+logo: "/images/profile.jpg"
+logo_alt: "Portrait of Zekeriya Ender Eger"
+image: "/images/profile.jpg"
+
+description: "Ph.D. candidate in Mechanical Engineering at Virginia Tech working on computational materials science, physics-informed machine learning, numerical simulation, optimization, and high-performance computing."
+
+tagline: "Ph.D. Candidate, Mechanical Engineering <br> Virginia Tech"
 
 url: "https://endereger.github.io"
-author: "Erdem Caliskan"
+author: "Zekeriya Ender Eger"
 
-remote_theme: pages-themes/minimal@v0.2.0
 plugins:
-- jekyll-remote-theme
-- jekyll-seo-tag
-- jekyll-sitemap
-google_analytics: G-FDYFBHBXFJ # your Google Analytics tracking ID here
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-# Optional profile links 
-email: "erdem@tennessee.edu"
-linkedin_url: "https://www.linkedin.com/in/caliskan-erdem/"
-scholar_url: "https://scholar.google.com/citations?user=zyi4jX8AAAAJ&hl=en&oi=sra" # e.g., https://scholar.google.com/citations?user=XXXX
-orcid_url: "https://orcid.org/0000-0003-4488-0364"   # e.g., https://orcid.org/0000-0000-0000-0000
-cv_url: "/pdf/Erdem_Caliskan_CV.pdf"
+# Optional profile links
+email: "endereger@vt.edu"
+github_url: "https://github.com/endereger"
+scholar_url: "https://scholar.google.com/citations?user=W71BizwAAAAJ&hl=en&oi=ao"
+
+# Add these later if you want
+linkedin_url: "https://www.linkedin.com/in/zekeriya-ender-eger/"
+# orcid_url: "https://orcid.org/YOUR-ORCID"
+# cv_url: "/pdf/Zekeriya_Ender_Eger_CV.pdf"
 
 exclude:
-  - cv.tex
   - vendor
+  - cv.tex
